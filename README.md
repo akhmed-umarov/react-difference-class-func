@@ -15,4 +15,14 @@ Simple rules needed to understand the difference in the use of state in differen
       })) \
    }
 
+## if I want to write to the state a function that returns something, then I need to pass it in this form
+
+   const Randomizer = ()=>( \
+      Math.floor(Math.random() * 50) \
+   ) 
+
+   const [number , setNumber ] = useState(Randomizer) || useState(()=>{Randomizer()}); \
+
+   if written like this, it will call the function every time \
+   const [numbers , setNumbers ] = useState(Randomizer()) \
 
